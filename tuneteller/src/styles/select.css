@@ -1,0 +1,116 @@
+#home {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    width: 5em;
+}
+
+#wrap {
+    position: absolute;
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 10%;
+    margin-left: 10%;
+    width: 80%;
+}
+
+#selection {
+    position: absolute;
+    background-color: rgba(9, 10, 15, 0.8);
+    text-align: center;
+    height: 50vh;
+    width: 25%;
+}
+
+#selectxt {
+    font-family: Roboto;
+    color: white;
+    font-size: 1.5em;
+    margin-top: 10%;
+}
+
+#allsongs {
+    position: absolute;
+    background-color: rgba(9, 10, 15, 0.8);
+    text-align: center;
+    margin-left: 35%;
+    height: 50vh;
+    width: 65%;
+    overflow: hidden;
+}
+
+#alltxt {
+    font-family: Roboto;
+    color: white;
+    font-size: 1.5em;
+    margin-top: 4%;
+}
+
+#songs-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 75%;
+    margin-top: 5vh;
+}
+
+#song {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 20%;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(9, 10, 15, 0.8);
+    padding: 10px;
+    margin-left: 5%;
+}
+
+#music {
+    max-width: 30%;
+    margin-right: 30%;
+}
+
+#song-details {
+    font-family: Roboto;
+    color: white;
+}
+
+#songs-display {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 75%;
+    margin-top: 5vh;
+}
+
+#song2 {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(9, 10, 15, 0.8);
+    padding: 10px;
+    margin-left: 5%;
+}
+
+#remove {
+    margin-left: 8%;
+    background-color: red;
+}
+
+#launch {
+    position: absolute;
+    top: 93%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 25px;
+    letter-spacing: 5px;
+}
