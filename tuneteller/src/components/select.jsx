@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import home from "../img/home_white.png";
@@ -7,6 +7,36 @@ import "../styles/home.css";
 import "../styles/select.css";
 
 function Select() {
+useEffect(() => {
+  fetch("http://localhost:5000/select", {
+    method: "POST" // Utilisez la méthode GET pour récupérer des données sans en envoyer
+  })
+    .then(function (response) {
+
+      if (response.ok) {
+        // Convert the response to JSON format
+        return response.json();
+      } else {
+        throw new Error('Une erreur s\'est produite');
+      }
+    })
+    .then(function (data) {
+      // Mettez le tableau de données dans une variable d'état
+      setFetchedData(data); // Assurez-vous d'avoir une variable d'état pour stocker les données
+    })
+    .catch(function (error) {
+      console.error("Une erreur s'est produite :", error);
+    });
+    }, []);
+
+// Assurez-vous d'avoir une variable d'état pour stocker les données
+const [fetchedData, setFetchedData] = useState([]);
+
+// Vous pouvez maintenant utiliser "fetchedData" dans votre composant
+
+
+    console.log(fetchedData);
+
     const [selectedSongs, setSelectedSongs] = useState([]);
     const navigate = useNavigate();
     const songData = [
@@ -107,6 +137,8 @@ function Select() {
             image: music,
         }
     ];
+
+
     const handleSongClick = (song) => {
         if (!selectedSongs.some(selectedSong => selectedSong.id === song.id)) {
             const updatedSelection = [...selectedSongs, song];
