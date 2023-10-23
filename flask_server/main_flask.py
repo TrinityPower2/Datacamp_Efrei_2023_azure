@@ -9,6 +9,7 @@ import json
 
 
 cred = credentials.Certificate("../tuneteller-29e7c-firebase-adminsdk-9ghi0-c515cb5c65.json")
+#cred = credentials.Certificate("D:\\Project\\M1\\Datacamp_Efrei_2023\\tuneteller-29e7c-firebase-adminsdk-9ghi0-c515cb5c65.json")
 firebase_admin.initialize_app(cred, {
     'databaseURL': 'https://tuneteller-29e7c-default-rtdb.europe-west1.firebasedatabase.app/'
 })

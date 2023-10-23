@@ -69,13 +69,14 @@
 }
 
 #music {
-    max-width: 30%;
-    margin-right: 30%;
+    max-width: 13%;
+    margin-right: 13%;
 }
 
 #song-details {
     font-family: Roboto;
     color: white;
+    width: 10vw;
 }
 
 #songs-display {

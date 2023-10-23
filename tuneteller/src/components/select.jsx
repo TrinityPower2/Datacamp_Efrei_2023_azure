@@ -23,6 +23,7 @@ useEffect(() => {
     .then(function (data) {
       // Mettez le tableau de données dans une variable d'état
       setFetchedData(data); // Assurez-vous d'avoir une variable d'état pour stocker les données
+      setSongData(data.variable);
     })
     .catch(function (error) {
       console.error("Une erreur s'est produite :", error);
@@ -35,108 +36,11 @@ const [fetchedData, setFetchedData] = useState([]);
 // Vous pouvez maintenant utiliser "fetchedData" dans votre composant
 
 
-    console.log(fetchedData);
+    console.log(fetchedData.variable);
 
     const [selectedSongs, setSelectedSongs] = useState([]);
     const navigate = useNavigate();
-    const songData = [
-        {
-            id: 1,
-            name: 'Song 1',
-            artist: 'Artist 1',
-            image: music,
-        },
-        {
-            id: 2,
-            name: 'Song 2',
-            artist: 'Artist 2',
-            image: music,
-        },
-        {
-            id: 3,
-            name: 'Song 3',
-            artist: 'Artist 3',
-            image: music,
-        },
-        {
-            id: 4,
-            name: 'Song 4',
-            artist: 'Artist 4',
-            image: music,
-        },
-        {
-            id: 5,
-            name: 'Song 5',
-            artist: 'Artist 5',
-            image: music,
-        },
-        {
-            id: 6,
-            name: 'Song 6',
-            artist: 'Artist 6',
-            image: music,
-        },
-        {
-            id: 7,
-            name: 'Song 7',
-            artist: 'Artist 7',
-            image: music,
-        },
-        {
-            id: 8,
-            name: 'Song 8',
-            artist: 'Artist 8',
-            image: music,
-        },
-        {
-            id: 9,
-            name: 'Song 9',
-            artist: 'Artist 9',
-            image: music,
-        },
-        {
-            id: 10,
-            name: 'Song 10',
-            artist: 'Artist 10',
-            image: music,
-        },
-        {
-            id: 11,
-            name: 'Song 11',
-            artist: 'Artist 11',
-            image: music,
-        },
-        {
-            id: 12,
-            name: 'Song 12',
-            artist: 'Artist 12',
-            image: music,
-        },
-        {
-            id: 13,
-            name: 'Song 13',
-            artist: 'Artist 13',
-            image: music,
-        },
-        {
-            id: 14,
-            name: 'Song 14',
-            artist: 'Artist 14',
-            image: music,
-        },
-        {
-            id: 15,
-            name: 'Song 15',
-            artist: 'Artist 15',
-            image: music,
-        },
-        {
-            id: 16,
-            name: 'Song 16',
-            artist: 'Artist 16',
-            image: music,
-        }
-    ];
+    const [songData, setSongData] = useState([]);
 
 
     const handleSongClick = (song) => {
@@ -172,10 +76,10 @@ const [fetchedData, setFetchedData] = useState([]);
             <div id='songs-display'>
                 {selectedSongs.map((song2) =>(
                     <div id='song2' key={song2.id}>
-                        <img id="music" src={song2.image} alt="" />
+                        <img id="music" src={music} alt="" />
                         <div id="song-details">
-                            <p id="song-name2">{song2.name}</p>
-                            <p id="artist-name2">{song2.artist}</p>
+                            <p id="song-name2">{song2.song}</p>
+                            <p id="artist-name2">{song2.singer}</p>
                         </div>
                         <button id='remove' onClick={() => handleRemoveSong(song2.id)}>
                             X
@@ -187,12 +91,12 @@ const [fetchedData, setFetchedData] = useState([]);
         <div id='allsongs'>
             <div id='alltxt'>Available songs</div>
             <div id='songs-container'>
-            {songData.map((song) => (
-                <div id="song" key={song.id} onClick={() => handleSongClick(song)}>
-                    <img id="music" src={song.image} alt="" />
+            {songData.map((tsong) => (
+                <div id="song" key={tsong.id} onClick={() => handleSongClick(tsong)}>
+                    <img id="music" src={music} alt="" />
                     <div id="song-details">
-                        <p id="song-name">{song.name}</p>
-                        <p id="artist-name">{song.artist}</p>
+                        <p id="song-name">{tsong.song}</p>
+                        <p id="artist-name">{tsong.singer}</p>
                     </div>
                 </div>
             ))}
