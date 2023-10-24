@@ -7,28 +7,31 @@ import "../styles/home.css";
 import "../styles/select.css";
 
 function Select() {
-useEffect(() => {
-  fetch("http://localhost:5000/select", {
-    method: "POST" // Utilisez la méthode GET pour récupérer des données sans en envoyer
-  })
-    .then(function (response) {
-
-      if (response.ok) {
-        // Convert the response to JSON format
-        return response.json();
-      } else {
-        throw new Error('Une erreur s\'est produite');
-      }
-    })
-    .then(function (data) {
-      // Mettez le tableau de données dans une variable d'état
-      setFetchedData(data); // Assurez-vous d'avoir une variable d'état pour stocker les données
-      setSongData(data.variable);
-    })
-    .catch(function (error) {
-      console.error("Une erreur s'est produite :", error);
+    useEffect(() => {
+        fetch('http://localhost:5000/select', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({maVariable: 'ok'}),
+        })
+            .then((response) => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error("Réponse du serveur non valide");
+                }
+            })
+            .then((data) => {
+                setFetchedData(data); // Assurez-vous d'avoir une variable d'état pour stocker les données
+                setSongData(data.variable);
+            })
+            .catch((error) => {
+                console.error("Erreur lors de la requête :", error);
+            });
     });
-    }, []);
+
+
 
 // Assurez-vous d'avoir une variable d'état pour stocker les données
 const [fetchedData, setFetchedData] = useState([]);
@@ -55,6 +58,7 @@ const [fetchedData, setFetchedData] = useState([]);
     };
     const handleLetTuneItClick = () => {
         console.log("selectedSongs:", selectedSongs);
+        sessionStorage.setItem('selected_songs', JSON.stringify(selectedSongs));
         navigate("/display", { state: { selectedSongs } });
     };
   return (
