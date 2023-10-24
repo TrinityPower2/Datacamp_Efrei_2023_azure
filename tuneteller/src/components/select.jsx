@@ -50,6 +50,8 @@ const [fetchedData, setFetchedData] = useState([]);
         if (!selectedSongs.some(selectedSong => selectedSong.id === song.id)) {
             const updatedSelection = [...selectedSongs, song];
             setSelectedSongs(updatedSelection);
+            sessionStorage.setItem('selected_songs', JSON.stringify(selectedSongs));
+
         }
     };
     const handleRemoveSong = (songId) => {
