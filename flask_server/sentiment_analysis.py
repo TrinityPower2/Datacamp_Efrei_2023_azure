@@ -38,13 +38,11 @@ def compute_recommendations(selected_songs):
     # create the points column
     df_dataset['points'] = 0
     # list of attributes to compare
-    df_cols = ['Artist', 'Album', 'Popularity', 'Nb contributors', 'lang', 'duration', 'listener', 'playcount', 'date',
-               "dating", "violence", "world/life", "night/time", "shake the audience", "family/gospel", "romantic",
-               "communication", "obscene", "music", "movement/places", "light/visual perceptions", "family/spiritual",
-               "like/girls", "sadness", "feelings", "danceability", "loudness", "acousticness", "instrumentalness",
-               "energy"]
-    # TEMPORARY ZIFVNDSJKNSVDOKN?PQDLMB?SFB
-    df_cols = ['Artist', 'Album', 'Popularity', 'Nb contributors', 'lang', 'duration', 'listener', 'playcount', 'date']
+    df_cols = ['Artist', 'Album', 'Popularity', 'Nb contributors', 'Detected_Language', 'duration', 'listener',
+               'playcount', 'date', "dating", "violence", "world life", "night time", "shake the audience",
+               "family gospel", "romantic", "communication", "obscene", "music", "movement places",
+               "light visual perceptions", "family spiritual", "like girls", "sadness", "feelings", "danceability",
+               "loudness", "acousticness", "instrumentalness", "energy"]
 
     for song in selected_songs_full:
         for col in df_cols:

@@ -202,6 +202,3 @@ def add_music():
 
         print(df)
         ref.child(str(max_id+1)).set(df)
-
-
-add_music()

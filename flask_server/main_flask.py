@@ -33,9 +33,8 @@ def select():
 @app.route('/display_recommendation', methods=['POST'])
 def display_recommendation():
     ma_variable = request.json.get('maVariable')
-    # print('test', ma_variable)
     recommended_songs = compute_recommendations(ma_variable)
-    return jsonify({'recommendation': ma_variable})
+    return jsonify({'recommendation': recommended_songs})
 
 
 if __name__ == "__main__":
