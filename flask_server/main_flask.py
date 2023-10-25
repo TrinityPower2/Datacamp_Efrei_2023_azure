@@ -5,6 +5,7 @@ from firebase_admin import db
 from flask import Flask, request, send_file, jsonify
 from flask_cors import CORS
 from function_song import song_list
+from sentiment_analysis import compute_recommendations
 import json
 
 cred = credentials.Certificate("../tuneteller-29e7c-firebase-adminsdk-9ghi0-c515cb5c65.json")
@@ -17,7 +18,6 @@ app = Flask(__name__)
 CORS(app)
 
 
-
 @app.route('/')  # Page d'accueil
 def home():
     return "hello"
@@ -26,14 +26,15 @@ def home():
 @app.route('/select', methods=['POST'])
 def select():
     infos = song_list()
-    print(infos)
+    # print(infos)
     return json.dumps({'variable': infos})
 
 
 @app.route('/display_recommendation', methods=['POST'])
 def display_recommendation():
     ma_variable = request.json.get('maVariable')
-    print('test', ma_variable)
+    # print('test', ma_variable)
+    recommended_songs = compute_recommendations(ma_variable)
     return jsonify({'recommendation': ma_variable})
 
 
