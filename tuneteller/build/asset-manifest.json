@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/newdatacampefreiapp.azurewebsites.net/static/css/main.54bd8e52.css",
+    "main.js": "/newdatacampefreiapp.azurewebsites.net/static/js/main.a8ee1a16.js",
+    "static/js/787.32ba0700.chunk.js": "/newdatacampefreiapp.azurewebsites.net/static/js/787.32ba0700.chunk.js",
+    "static/media/efficace.png": "/newdatacampefreiapp.azurewebsites.net/static/media/efficace.6ac75ab738bb663d34b0.png",
+    "static/media/logo_efrei2.png": "/newdatacampefreiapp.azurewebsites.net/static/media/logo_efrei2.8111d6509352f3a00b21.png",
+    "static/media/simple.png": "/newdatacampefreiapp.azurewebsites.net/static/media/simple.167f6d3d9490d82f5c68.png",
+    "static/media/music.png": "/newdatacampefreiapp.azurewebsites.net/static/media/music.a30faa7f7c2a302992a1.png",
+    "static/media/home_white.png": "/newdatacampefreiapp.azurewebsites.net/static/media/home_white.6498a1b3689a0c382249.png",
+    "index.html": "/newdatacampefreiapp.azurewebsites.net/index.html",
+    "main.54bd8e52.css.map": "/newdatacampefreiapp.azurewebsites.net/static/css/main.54bd8e52.css.map",
+    "main.a8ee1a16.js.map": "/newdatacampefreiapp.azurewebsites.net/static/js/main.a8ee1a16.js.map",
+    "787.32ba0700.chunk.js.map": "/newdatacampefreiapp.azurewebsites.net/static/js/787.32ba0700.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.54bd8e52.css",
+    "static/js/main.a8ee1a16.js"
+  ]
+}
