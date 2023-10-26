@@ -10,8 +10,9 @@
     position: absolute;
     background-color: rgba(9, 10, 15, 0.8);
     text-align: center;
+    margin-top: -5%;
     width: 100%;
-    padding-bottom: 28%;
+    padding-bottom: 5%;
 }
 
 #recotxt {
@@ -19,4 +20,37 @@
     color: white;
     font-size: 1.5em;
     padding-top: 2%;
+}
+
+#reco-container {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 44vh;
+    margin-top: 5vh;
+}
+
+#contentDisplayed {
+    color: white;
+    margin-left: 70%;
+}
+
+#song {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 15%;
+    background-color: rgba(9, 10, 15, 0.8);
+    margin-left: 7%;
+}
+
+#music {
+    max-width: 13%;
+    margin-right: 13%;
+}
+
+#song-details {
+    font-family: Roboto;
+    color: white;
+    width: 10vw;
 }
