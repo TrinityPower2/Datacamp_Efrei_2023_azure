@@ -1,6 +1,6 @@
 from function_song import *
 import json
-
+import ast
 
 def is_song_in_list(songs_list, dico):
     for song in songs_list:
@@ -10,14 +10,15 @@ def is_song_in_list(songs_list, dico):
 
 
 def increment_points(df, column_name, value):
-    df['points'] += df[column_name].apply(lambda x: 1 if x == value else 0)
+    df['points'] += df[column_name].apply(lambda x: 1 if x == value and x != 'N/A' else 0)
 
 
 def calculate_similarity(row, column_name, df_selected):
     points = 0
-    if isinstance(row[column_name], list):
-        for genre_list in df_selected[column_name]:
-            points += sum(1 for genre in row[column_name] if genre in genre_list)
+    if len(row[column_name][0]) != 0:
+        if isinstance(row[column_name], list):
+            for genre_list in df_selected[column_name]:
+                points += sum(1 for genre in row[column_name] if genre in genre_list)
     return points
 
 
@@ -50,6 +51,9 @@ def compute_recommendations(selected_songs):
 
     # manage genre lists
     df_selected = pd.DataFrame(selected_songs_full)
+    df_dataset['genre_artist'] = df_dataset['genre_artist'].str.strip("[]").str.replace("'", "").str.split(', ')
+    df_dataset['genre_song'] = df_dataset['genre_song'].str.strip("[]").str.replace("'", "").str.split(', ')
+
     df_dataset['points'] += df_dataset.apply(calculate_similarity, args=('genre_artist', df_selected), axis=1)
     df_dataset['points'] += df_dataset.apply(calculate_similarity, args=('genre_song', df_selected), axis=1)
 
