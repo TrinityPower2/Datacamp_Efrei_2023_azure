@@ -1,0 +1,8 @@
+Flask
+Flask_CORS
+firebase
+firebase_admin
+pandas
+nodejs
+langdetect
+requests
